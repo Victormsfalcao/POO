@@ -1,4 +1,4 @@
-from biblioteca import Atleta,Ciclista,TriAtleta,Corredor,Nadador
+from biblioteca import TriAtleta
 
 triatleta = TriAtleta(75)
 triatleta.aquecer()
