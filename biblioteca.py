@@ -1,3 +1,53 @@
+class Pessoa:
+    def __init__(self, nome, peso, idade):
+        self.nome = nome
+        self.peso = peso
+        self.idade = idade
+        self.esta_comendo = False
+        self.esta_dormindo = False
+        self.esta_falando = False
+
+    def apresentar(self):
+        print(f"Olá, meu nome é {self.nome}")
+        print(f"Tenho {self.idade} anos.")
+        print(f"Meu peso é {self.peso} kg")
+
+    def comer(self):
+        if self.esta_dormindo:
+            print(f"{self.nome} está dormindo e não pode comer.")
+            return
+        if self.esta_comendo:
+            print(f"{self.nome} já está comendo.")
+        else:
+            self.esta_comendo = True
+            self.esta_falando = False
+            print(f"{self.nome} começou a comer.")
+
+    def dormir(self):
+        if self.esta_comendo:
+            print(f"{self.nome} está comendo e não pode dormir.")
+            return
+        if self.esta_dormindo:
+            print(f"{self.nome} já está dormindo.")
+        else:
+            self.esta_dormindo = True
+            self.esta_falando = False
+            print(f"{self.nome} foi dormir.")
+
+    def falar(self):
+        if self.esta_dormindo:
+            print(f"{self.nome} está dormindo e não pode falar.")
+            return
+        if self.esta_comendo:
+            print(f"{self.nome} está comendo e não pode falar.")
+            return
+        if self.esta_falando:
+            print(f"{self.nome} já está falando.")
+        else:
+            self.esta_falando = True
+            print(f"{self.nome} começou a falar.")
+
+# ---------------------------------------------------------------------
 class Animal():
     def __init__(self, nome, cor):
         self.nome = nome
@@ -90,3 +140,9 @@ class Triangulo(Forma):
         perimetro = 3 * lado
         print(f"O perímetro do triângulo é de {perimetro}")
 
+#-----------------------------------------------------------------------------
+
+class Atleta():
+    def __init__(self,aposentado,peso):
+        self.aposentado = True
+        self.peso = False
