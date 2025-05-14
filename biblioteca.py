@@ -143,6 +143,45 @@ class Triangulo(Forma):
 #-----------------------------------------------------------------------------
 
 class Atleta():
-    def __init__(self,aposentado,peso):
+    def __init__(self,peso):
+        self.aposentado = False
+        self.peso = peso
+
+    def aposentar(self):
         self.aposentado = True
-        self.peso = False
+        print("O atleta está aposentado")
+
+    def aquecer(self):
+        if not self.aposentado:
+            print("O atleta está aquecendo")
+
+        else:
+            print("O atleta está aposentado e não pode se aquecer")
+
+class Corredor(Atleta):
+    def correr(self):
+        if not self.aposentado:
+            print("O atleta está correndo.")
+        else:
+            print("O atleta está aposentado e não pode correr.")
+
+
+class Nadador(Atleta):
+    def nadar(self):
+        if not self.aposentado:
+            print("O atleta está nadando.")
+        else:
+            print("O atleta está aposentado e não pode nadar.")
+
+
+class Ciclista(Atleta):
+    def pedalar(self):
+        if not self.aposentado:
+            print("O atleta está pedalando.")
+        else:
+            print("O atleta está aposentado e não pode pedalar.")
+
+
+class TriAtleta(Corredor, Nadador, Ciclista):
+    def __init__(self, peso):
+        super().__init__(peso)
